@@ -260,6 +260,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // Mobile-Only App Download Popup (Appears after 10 seconds)
+  const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+  if (isMobileDevice) {
+    const appModal = document.getElementById('mobile-app-modal');
+    const closeBtn = document.getElementById('close-app-modal');
+    const dismissBtn = document.getElementById('dismiss-app-btn');
+    const downloadBtn = document.getElementById('download-app-btn');
+    const overlay = document.getElementById('app-modal-overlay');
+
+    // Trigger popup after 10 seconds (10000 ms)
+    setTimeout(() => {
+      if (appModal && !sessionStorage.getItem('appModalDismissed')) {
+        appModal.classList.add('active');
+        appModal.setAttribute('aria-hidden', 'false');
+      }
+    }, 10000);
+
+    function closeModal() {
+      if (appModal) {
+        appModal.classList.remove('active');
+        appModal.setAttribute('aria-hidden', 'true');
+        sessionStorage.setItem('appModalDismissed', 'true');
+      }
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        showToast('Starting Anurag Soni Mobile App download... 📲');
+        closeModal();
+      });
+    }
+  }
 });
 
 // Start preloading process
