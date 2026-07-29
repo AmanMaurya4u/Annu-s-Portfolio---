@@ -151,5 +151,87 @@ function onAllImagesLoaded() {
 window.addEventListener('resize', resizeCanvas);
 window.addEventListener('orientationchange', resizeCanvas);
 
+// Toast Notification Helper
+function showToast(message) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+// Setup Interactive Features after DOM Loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Back to Top Button
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Copy Email Link
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'sonianurag379@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast(`Copied ${email} to clipboard! 📋`);
+      }).catch(() => {
+        showToast(`Email: ${email}`);
+      });
+    });
+  }
+
+  // Color Swatch Hex Copying
+  const swatchCards = document.querySelectorAll('.swatch-card');
+  swatchCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const hexElement = card.querySelector('.spec-code');
+      if (hexElement) {
+        const hexText = hexElement.textContent.trim();
+        navigator.clipboard.writeText(hexText).then(() => {
+          showToast(`Copied ${hexText} to clipboard! 🎨`);
+        }).catch(() => {
+          showToast(`Color Hex: ${hexText}`);
+        });
+      }
+    });
+  });
+
+  // Active Navigation ScrollSpy
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    let currentSectionId = '';
+    const scrollPosition = window.scrollY + 200;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+});
+
 // Start preloading process
 preloadImages();
