@@ -43,7 +43,7 @@
     <header class="navbar-wrapper">
       <nav class="navbar">
         <a href="#" class="logo">Anurag Soni</a>
-        <div class="nav-links">
+        <div id="nav-links" class="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#education">Education</a>
@@ -51,9 +51,16 @@
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
-        <a href="#contact" class="btn-primary">
-          Get in touch <span class="arrow">→</span>
-        </a>
+        <div class="nav-actions">
+          <a href="#contact" class="btn-primary">
+            Get in touch <span class="arrow">→</span>
+          </a>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -141,31 +148,31 @@
 
         <!-- 3 Education & Highlight Cards Grid -->
         <div id="education" class="showcase-grid">
-          <div class="showcase-card" style="background: rgba(22,22,28,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; border-radius: var(--radius-lg);">
+          <div class="showcase-card custom-card">
             <div>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-orange); letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem;">DEGREE • DELHI UNIVERSITY</span>
-              <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">B.A. (Hons.) French Language</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Graduated July 2026 from Delhi University. Specialized in French Literature, Translation Studies, Culture &amp; Civilization, and Linguistics.</p>
+              <span class="card-tag">DEGREE • DELHI UNIVERSITY</span>
+              <h3 class="card-heading">B.A. (Hons.) French Language</h3>
+              <p class="card-body-text">Graduated July 2026 from Delhi University. Specialized in French Literature, Translation Studies, Culture &amp; Civilization, and Linguistics.</p>
             </div>
-            <span style="font-size: 0.85rem; font-weight: 700; color: #fff; background: rgba(255,255,255,0.06); padding: 0.4rem 0.9rem; border-radius: var(--radius-pill); width: fit-content;">Graduated July 2026</span>
+            <span class="card-badge">Graduated July 2026</span>
           </div>
 
-          <div class="showcase-card" style="background: rgba(22,22,28,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; border-radius: var(--radius-lg);">
+          <div class="showcase-card custom-card">
             <div>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-orange); letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem;">PROJECT • FACULTY PRESENTATION</span>
-              <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Bande Dessinée Comic-Strip</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Original French-language comic strip presented at Delhi University (DGRS), demonstrating independent content creation &amp; storytelling skills.</p>
+              <span class="card-tag">PROJECT • FACULTY PRESENTATION</span>
+              <h3 class="card-heading">Bande Dessinée Comic-Strip</h3>
+              <p class="card-body-text">Original French-language comic strip presented at Delhi University (DGRS), demonstrating independent content creation &amp; storytelling skills.</p>
             </div>
-            <span style="font-size: 0.85rem; font-weight: 700; color: #fff; background: rgba(255,255,255,0.06); padding: 0.4rem 0.9rem; border-radius: var(--radius-pill); width: fit-content;">Certificate Winner (2024)</span>
+            <span class="card-badge">Certificate Winner (2024)</span>
           </div>
 
-          <div class="showcase-card" style="background: rgba(22,22,28,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 2.2rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; border-radius: var(--radius-lg);">
+          <div class="showcase-card custom-card">
             <div>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-orange); letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem;">SCHOOLING • U.P. BOARD</span>
-              <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Senior &amp; High School</h3>
-              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Class XII GIC Prayagraj (71% - 2022)<br>Class X Excellent Education Center Sant Ravidas Nagar (85% - 2020)</p>
+              <span class="card-tag">SCHOOLING • U.P. BOARD</span>
+              <h3 class="card-heading">Senior &amp; High School</h3>
+              <p class="card-body-text">Class XII GIC Prayagraj (71% - 2022)<br>Class X Excellent Education Center Sant Ravidas Nagar (85% - 2020)</p>
             </div>
-            <span style="font-size: 0.85rem; font-weight: 700; color: #fff; background: rgba(255,255,255,0.06); padding: 0.4rem 0.9rem; border-radius: var(--radius-pill); width: fit-content;">Consistent Academic Excellence</span>
+            <span class="card-badge">Consistent Academic Excellence</span>
           </div>
         </div>
       </section>

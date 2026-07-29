@@ -168,6 +168,35 @@ function showToast(message) {
 
 // Setup Interactive Features after DOM Loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Hamburger Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinksContainer = document.getElementById('nav-links');
+
+  if (menuToggle && navLinksContainer) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('open');
+      navLinksContainer.classList.toggle('nav-open');
+    });
+
+    // Close menu when clicking any nav link
+    const mobileLinks = navLinksContainer.querySelectorAll('a');
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('open');
+        navLinksContainer.classList.remove('nav-open');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinksContainer.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('open');
+        navLinksContainer.classList.remove('nav-open');
+      }
+    });
+  }
+
   // Back to Top Button
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
