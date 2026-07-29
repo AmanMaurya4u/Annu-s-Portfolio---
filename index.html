@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folioblox — Creative Director Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lenis Smooth Scroll Library -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="loader" class="loader-container">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <h2 class="loader-title">Folioblox</h2>
+      <div class="progress-bar-bg">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+      </div>
+      <span id="loader-percent" class="loader-percent">0%</span>
+    </div>
+  </div>
+
+  <!-- Fixed Hero Canvas Background -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Minimal Scroll & Frame Info HUD -->
+  <div id="hud" class="hud-container hidden">
+    <div class="hud-pill">
+      <span class="hud-dot"></span>
+      <span id="frame-counter">FRAME 001 / 300</span>
+    </div>
+  </div>
+
+  <!-- Foreground Scrollable Website Overlay -->
+  <div class="scroll-wrapper">
+
+    <!-- Navigation Bar -->
+    <header class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="#" class="logo">Folioblox</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+        </div>
+        <a href="#contact" class="btn-primary">
+          Get in touch <span class="arrow">→</span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="hero-top">
+          <div class="hero-left">
+            <span class="hero-subtitle">Hey, I'm a</span>
+            <h1 class="hero-title">Creative<br>Director</h1>
+          </div>
+          <div class="hero-right">
+            <div class="hero-quote-card">
+              <h2 class="hero-quote">Great design should<br>feel invisible.</h2>
+              <p class="hero-desc">From logo to language, I build brands that<br>connect and convert.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Grid (#01 - #04) -->
+        <div class="services-grid">
+          <div class="service-item">
+            <span class="service-num">#01</span>
+            <span class="service-name">Brand Strategy</span>
+          </div>
+          <div class="service-item">
+            <span class="service-num">#02</span>
+            <span class="service-name">Brand Identity Design</span>
+          </div>
+          <div class="service-item">
+            <span class="service-num">#03</span>
+            <span class="service-name">Packaging Design</span>
+          </div>
+          <div class="service-item">
+            <span class="service-num">#04</span>
+            <span class="service-name">Creative Direction</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brands Strip -->
+      <section class="brands-section">
+        <div class="brands-card">
+          <span class="brands-label">Trusted by Brands I've<br>Helped Shape</span>
+          <div class="brands-logos">
+            <div class="brand-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+              <span>Supa Blox</span>
+            </div>
+            <div class="brand-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 22 22 22"/></svg>
+              <span>Hype Blox</span>
+            </div>
+            <div class="brand-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+              <span>Frame Blox</span>
+            </div>
+            <div class="brand-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+              <span>Ultra Blox</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Behind the Designs Section -->
+      <section id="about" class="designs-section">
+        <div class="designs-header">
+          <div class="designs-left">
+            <span class="orange-tag">Behind the Designs</span>
+            <h2 class="designs-title">Shaping<br>Experiences That<br>Make Life Simpler</h2>
+          </div>
+          <div class="designs-right">
+            <p class="designs-lead">I'm a product designer focused on building clean, intuitive interfaces that solve real-world problems.</p>
+            <div class="designs-cta-group">
+              <span class="designs-subtext">Let's Build Something<br>Meaningful Together</span>
+              <a href="#contact" class="btn-orange">
+                Get in touch <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Showcase Cards Grid -->
+        <div id="projects" class="showcase-grid">
+          <div class="showcase-card">
+            <div class="card-image-wrap">
+              <img src="card-1.png" alt="Black Puffer Jacket Design" loading="lazy">
+            </div>
+          </div>
+          <div class="showcase-card">
+            <div class="card-image-wrap">
+              <img src="card-2.png" alt="Wireless Headphones Design" loading="lazy">
+            </div>
+          </div>
+          <div class="showcase-card">
+            <div class="card-image-wrap">
+              <img src="card-3.png" alt="Cosmetic Product Design" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Spacer for smooth scroll progression -->
+      <footer class="footer-spacer">
+        <p>© 2026 Folioblox. Scroll to explore frame sequence.</p>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
