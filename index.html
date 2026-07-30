@@ -565,6 +565,79 @@
     </div>
   </div>
 
+  <!-- Floating AI Assistant Widget -->
+  <div id="ai-assistant-widget" class="ai-assistant-widget">
+    <!-- Floating Trigger Button -->
+    <button id="ai-trigger-btn" class="ai-trigger-btn" aria-label="Open Anurag's AI Assistant">
+      <div class="ai-trigger-badge">1</div>
+      <div class="ai-trigger-icon">
+        <span class="bot-avatar">🤖</span>
+      </div>
+      <span class="ai-trigger-label">Ask Anurag's AI</span>
+    </button>
+
+    <!-- Chat Modal Window -->
+    <div id="ai-chat-window" class="ai-chat-window hidden" aria-hidden="true">
+      <!-- Header -->
+      <div class="ai-chat-header">
+        <div class="ai-header-left">
+          <div class="ai-avatar-box">
+            <span class="flag-icon">🇫🇷</span>
+            <span class="bot-icon">🤖</span>
+            <span class="online-indicator"></span>
+          </div>
+          <div class="ai-header-meta">
+            <h3 class="ai-header-title">Anurag's Portfolio AI</h3>
+            <span class="ai-header-status">Online • Ready to answer details</span>
+          </div>
+        </div>
+        <div class="ai-header-actions">
+          <button id="ai-reset-btn" class="ai-action-btn" title="Reset Chat">🔄</button>
+          <button id="ai-close-btn" class="ai-action-btn" title="Close Assistant">✕</button>
+        </div>
+      </div>
+
+      <!-- Quick Chips Bar (Preset Prompts) -->
+      <div class="ai-preset-chips" id="ai-preset-chips">
+        <button class="ai-chip" data-query="Who is Anurag Soni?">👋 About Anurag</button>
+        <button class="ai-chip" data-query="What is his French language level?">🇫🇷 French Skills</button>
+        <button class="ai-chip" data-query="Tell me about his Delhi University education">🎓 DU Education</button>
+        <button class="ai-chip" data-query="What projects has Anurag completed?">📜 Projects</button>
+        <button class="ai-chip" data-query="Is he available for rotational shifts?">🔄 Shift Availability</button>
+        <button class="ai-chip" data-query="How can I contact or hire Anurag?">📞 Contact Info</button>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div id="ai-chat-messages" class="ai-chat-messages">
+        <!-- Initial Welcome Message -->
+        <div class="ai-msg bot">
+          <div class="ai-msg-avatar">🤖</div>
+          <div class="ai-msg-content">
+            <p><strong>Bonjour! 👋 I am Anurag Soni's AI Portfolio Assistant.</strong></p>
+            <p>I know all details about Anurag's B.A. (Hons.) French degree from Delhi University, French-English translation skills, academic projects, shift preferences, and contact info.</p>
+            <p>Click any quick suggestion above or type your question below!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div id="ai-typing-indicator" class="ai-typing-indicator hidden">
+        <div class="ai-msg-avatar">🤖</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <form id="ai-chat-form" class="ai-chat-form">
+        <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="Ask about Anurag's skills, education, contact..." autocomplete="off">
+        <button type="submit" id="ai-send-btn" class="ai-send-btn" aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
