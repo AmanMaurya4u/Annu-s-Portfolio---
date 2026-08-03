@@ -1,6 +1,5 @@
 # 🇫🇷 Anurag Soni - French Language Portfolio...
 
-
 A modern professional portfolio showcasing my French language expertise, translation skills, cross-cultural communication experience, academic achievements, and career journey as an aspiring French Language Associate.
 
 ---
